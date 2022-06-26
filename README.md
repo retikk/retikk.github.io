@@ -1,2 +1,2 @@
-# jktravels.com
+# jktravels
 Travelling Organisation
