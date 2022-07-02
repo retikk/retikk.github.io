@@ -43,13 +43,13 @@ html {
 :root {
     --header-height: 4.8rem;
 
-    /*================ COLORS =================================*/
+    /*================ COLORS hsl(141, 53%, 48%, 0.81)  hsl(157, 99%, 39%)   hsl(157, 99%, 39%)   hsl(190, 66%, 25%)   =================================*/
 
     /* hsl Color Mode */
-    --first-color: hsl(141, 53%, 48%, 0.81);
-    --first-color-alt: hsl(157, 99%, 39%);
-    --title-color: hsl(157, 99%, 39%);
-    --text-color: hsl(190, 66%, 25%);
+    --first-color: #2eb2ff;
+    --first-color-alt: #2eb2ff;
+    --title-color: #2eb2ff;
+    --text-color: black;
     --text-color-light: hsl(190, 8%, 60%);
     --input-color: hsl(190, 20%, 94%);
     --body-color: hsl(190, 100%, 99%);
