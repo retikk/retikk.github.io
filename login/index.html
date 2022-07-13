@@ -15,16 +15,19 @@
       <div class="forms-container">
         <div class="signin-signup">
           <form action="#" class="sign-in-form">
+
+            <!-- login here -->
+
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
-              <input type="text" id="username" placeholder="Username" />
+              <input type="text" id="emaill" placeholder="Email" />
             </div>
             <div class="input-field">
               <i class="fas fa-lock"></i>
-              <input type="password" id="password" placeholder="Password" />
+              <input type="password" id="passwordd" placeholder="Password" />
             </div>
-            <input type="submit" value="Login" class="btn solid" />
+            <input type="submit" id="login" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -42,6 +45,9 @@
             </div>
           </form>
           <form action="#" class="sign-up-form">
+
+            <!-- signup here -->
+
             <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -55,7 +61,7 @@
               <i class="fas fa-lock"></i>
               <input type="password" id="password" placeholder="Password" />
             </div>
-            <input type="submit" class="btn" value="Sign up" />
+            <input type="submit" id="signUp" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
               <a href="#" class="social-icon">
@@ -78,9 +84,9 @@
       <div class="panels-container">
         <div class="panel left-panel">
           <div class="content">
-            <h3>One of us ?</h3>
+            <h3>New here ?</h3>
             <p>
-              Your next desination is next to you just login.
+              Just click on signup and find your next mazing destination in jammu and kashimr.
             </p>
             <button class="btn transparent" id="sign-up-btn">
               Sign up
@@ -90,9 +96,9 @@
         </div>
         <div class="panel right-panel">
           <div class="content">
-            <h3>New here ?</h3>
+            <h3>One of us ?</h3>
             <p>
-              Just click on signup and find your next mazing destination in jammu and kashimr.
+              Your next desination is next to you just login.
             </p>
             <button class="btn transparent" id="sign-in-btn">
               Sign in
@@ -111,7 +117,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
         import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -135,7 +141,9 @@
       const database = getDatabase(app);
       const auth = getAuth();
 
-    sighUp.addEventListener('click',(e) => {
+
+      //signUp Event Listener
+    signUp.addEventListener('click',(e) => {
 
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
@@ -164,9 +172,17 @@
 
     });
 
+    //Email Verification
+    sendEmailVerification(auth.currentUser)
+      .then(() => {
+        // Email verification sent!
+        // ...
+      });
+
+      //Login Event Listner
      login.addEventListener('click',(e)=>{
-       var email = document.getElementById('email').value;
-       var password = document.getElementById('password').value;
+       var email = document.getElementById('emaill').value;
+       var password = document.getElementById('passwordd').value;
 
           signInWithEmailAndPassword(auth, email, password)
           .then((userCredential) => {
@@ -190,21 +206,27 @@
 
      });
 
+
+    //Observer
     const user = auth.currentUser;
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
         // https://firebase.google.com/docs/reference/js/firebase.User
         const uid = user.uid;
+        alert('User loged in!');
         //bla bla bla
         // ...
       } else {
+        alert('User loged out!');
         // User is signed out
         // ...
         //bla bla bla
       }
     });
 
+
+      //Logout event listner
     logout.addEventListener('click',(e)=>{
 
        signOut(auth).then(() => {
@@ -220,6 +242,24 @@
 
     });
 
+    //Forget Password
+    reset.addEventListener('click',(e)=>{
+      sendPasswordResetEmail(auth, email)
+        .then(() => {
+          alert("You will get an email if an account will be linked with this email!"
+          // Password reset email sent!
+          // ..
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+
+          alert(errorMessage);
+          // ..
+        });
+    });
+
+    //next documentation https://firebase.google.com/docs/auth/web/manage-users
     </script>
 
   </body>
