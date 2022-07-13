@@ -1,188 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!------------------------------ FAVICON -------------------------------->
-        <link rel="shortcut icon" href="img/favicon.png" />
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <!------------------------------ REMIX ICONS -------------------------------->
-        <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <!------------------------------ FAVICON -------------------------------->
+    <link rel="shortcut icon" href="img/favicon.png" />
 
-        <!------------------------------ SWIPER CSS -------------------------------->
-        <link rel="stylesheet" href="css/swiper-bundle.min.css" />
+    <!------------------------------ REMIX ICONS -------------------------------->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet" />
 
-        <!------------------------------ MAIN CSS -------------------------------->
-        <link rel="stylesheet" href="css/style.css" />
+    <!------------------------------ SWIPER CSS -------------------------------->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css" />
 
-        <title>JKtravels</title>
-    </head>
-    <body>
-        <header class="header" id="header">
-            <nav class="nav container">
-                <a href="#" class="nav--logo">JKTravels</a>
+    <!------------------------------ MAIN CSS -------------------------------->
+    <link rel="stylesheet" href="css/style.css" />
 
-                <div class="nav--menu" id="nav-menu">
-                    <ul class="nav--list">
-                        <li class="nav--item">
-                            <a href="#home" class="nav--link active-link">Home</a>
-                        </li>
-                        <li class="nav--item">
-                            <a href="#about" class="nav--link">About</a>
-                        </li>
-                        <li class="nav--item">
-                            <a href="#discover" class="nav--link">Discover</a>
-                        </li>
-                        <li class="nav--item">
-                            <a href="#place" class="nav--link">Place</a>
-                        </li>
-                    </ul>
+    <title>JKtravels</title>
+</head>
 
-                    <!-- Theme Change Button -->
-                    <div class="nav--dark">
-                        <span class="change-theme-name">Dark mode</span>
-                        <i class="ri-moon-line change-theme-icon" id="theme-btn"></i>
-                    </div>
+<body>
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav--logo">JKTravels</a>
 
-                    <i class="ri-close-line nav--close" id="nav-close"></i>
+            <div class="nav--menu" id="nav-menu">
+                <ul class="nav--list">
+                    <li class="nav--item">
+                        <a href="#home" class="nav--link active-link">Home</a>
+                    </li>
+                    <li class="nav--item">
+                        <a href="#about" class="nav--link">About</a>
+                    </li>
+                    <li class="nav--item">
+                        <a href="#discover" class="nav--link">Discover</a>
+                    </li>
+                    <li class="nav--item">
+                        <a href="#place" class="nav--link">Place</a>
+                    </li>
+                </ul>
+
+                <!-- Theme Change Button -->
+                <div class="nav--dark">
+                    <span class="change-theme-name">Dark mode</span>
+                    <i class="ri-moon-line change-theme-icon" id="theme-btn"></i>
                 </div>
 
-                <div class="nav--toggle" id="nav-toggle">
-                    <i class="ri-function-line"></i>
+                <i class="ri-close-line nav--close" id="nav-close"></i>
+            </div>
+
+            <div class="nav--toggle" id="nav-toggle">
+                <i class="ri-function-line"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <!------------------------------ HOME -------------------------------->
+        <section class="home" id="home">
+            <img src="img/home1.jpg" alt="Jammu Kashmir" class="home--img" />
+
+            <div class="home--container container grid">
+                <div class="home--data">
+                    <span class="home--data-subtitle">Discover your place</span>
+                    <h1 class="home--data-title">
+                        Explore The <br /> Paradise <b/>Jammu Kashmir
+                    </h1>
+                    <a href="" class="button">Explore</a>
                 </div>
-            </nav>
-        </header>
 
-        <main class="main">
-            <!------------------------------ HOME -------------------------------->
-            <section class="home" id="home">
-                <img src="img/home1.jpg" alt="Jammu Kashmir" class="home--img" />
-
-                <div class="home--container container grid">
-                    <div class="home--data">
-                        <span class="home--data-subtitle">Discover your place</span>
-                        <h1 class="home--data-title">
-                            Explore The <br />
-                            Paradise <b/>Jammu Kashmir
-                        </h1>
-                        <a href="" class="button">Explore</a>
-                    </div>
-
-                    <div class="home--social">
-                        <a href="https://www.facebook.com/jktravels" target="_blank" class="home--social-link">
-                            <i class="ri-facebook-box-fill"></i>
-                        </a>
-                        <a href="https://www.instagram.com/travelling.jk" target="_blank" class="home--social-link">
-                            <i class="ri-instagram-fill"></i>
-                        </a>
-                        <a href="https://twitter.com/travelingjk" target="_blank" class="home--social-link">
-                            <i class="ri-twitter-fill"></i>
-                        </a>
-                    </div>
-
-                    <div class="home--info">
-                        <div>
-                            <span class="home--info-title">5 best place to visit</span>
-                            <a href="#place" class="button button--flex button--link home--info-button"> More <i class="ri-arrow-right-line"></i> </a>
-                        </div>
-
-                        <div class="home--info-overlay">
-                            <img src="img/home2.jpg" alt="Home 2" class="home--info-img" />
-                        </div>
-                    </div>
+                <div class="home--social">
+                    <a href="https://www.facebook.com/jktravels" target="_blank" class="home--social-link">
+                        <i class="ri-facebook-box-fill"></i>
+                    </a>
+                    <a href="https://www.instagram.com/travelling.jk" target="_blank" class="home--social-link">
+                        <i class="ri-instagram-fill"></i>
+                    </a>
+                    <a href="https://twitter.com/travelingjk" target="_blank" class="home--social-link">
+                        <i class="ri-twitter-fill"></i>
+                    </a>
                 </div>
-            </section>
 
-            <!------------------------------ ABOUT -------------------------------->
-            <section class="about section" id="about">
-                <div class="about--container container grid">
-                    <div class="about--data">
-                        <h2 class="section--title about--title">
-                            More Information <br />
-                            About The Best Places in Jammu and Kashmir
-                        </h2>
-                        <p class="about--description">
-                            You can find the most beautiful and pleasant places at the best prices with special discounts, you choose the place we will guide you all the way to
-                            wait, get your place now.
-                        </p>
-                        <a href="#" class="button">Reserve a place</a>
+                <div class="home--info">
+                    <div>
+                        <span class="home--info-title">5 best place to visit</span>
+                        <a href="#place" class="button button--flex button--link home--info-button"> More <i class="ri-arrow-right-line"></i> </a>
                     </div>
 
-                    <div class="about--img">
-                        <div class="about--img-overlay">
-                            <img src="img/about1.jpg" alt="About 1" class="about--img-one" />
-                        </div>
-
-                        <div class="about--img-overlay">
-                            <img src="img/about2.jpg" alt="About 2" class="about--img-two" />
-                        </div>
+                    <div class="home--info-overlay">
+                        <img src="img/home2.jpg" alt="Home 2" class="home--info-img" />
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!------------------------------ DISCOVER -------------------------------->
-            <section class="discover section" id="discover">
-                <h2 class="section--title">
-                    Discover the most <br />
-                    attractive place
-                </h2>
+        <!------------------------------ ABOUT -------------------------------->
+        <section class="about section" id="about">
+            <div class="about--container container grid">
+                <div class="about--data">
+                    <h2 class="section--title about--title">
+                        More Information <br /> About The Best Places in Jammu and Kashmir
+                    </h2>
+                    <p class="about--description">
+                        You can find the most beautiful and pleasant places at the best prices with special discounts, you choose the place we will guide you all the way to wait, get your place now.
+                    </p>
+                    <a href="#" class="button">Reserve a place</a>
+                </div>
 
-                <div class="discover--container container swiper">
-                    <div class="swiper-wrapper">
-                        <!------------------------------ Discover 1 -------------------------------->
-                        <div class="discover--card swiper-slide">
-                            <img src="img/kishtwar.jpg" alt="Discover 1" class="discover--img" />
-                            <div class="discover--data">
-                                <h2 class="discover--title">Kishtwar</h2>
-                                <span class="discover--description">24 tours available</span>
-                            </div>
+                <div class="about--img">
+                    <div class="about--img-overlay">
+                        <img src="img/about1.jpg" alt="About 1" class="about--img-one" />
+                    </div>
+
+                    <div class="about--img-overlay">
+                        <img src="img/about2.jpg" alt="About 2" class="about--img-two" />
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!------------------------------ DISCOVER -------------------------------->
+        <section class="discover section" id="discover">
+            <h2 class="section--title">
+                Discover the most <br /> attractive place
+            </h2>
+
+            <div class="discover--container container swiper">
+                <div class="swiper-wrapper">
+                    <!------------------------------ Discover 1 -------------------------------->
+                    <div class="discover--card swiper-slide">
+                        <img src="img/kishtwar.jpg" alt="Discover 1" class="discover--img" />
+                        <div class="discover--data">
+                            <h2 class="discover--title">Kishtwar</h2>
+                            <span class="discover--description">24 tours available</span>
                         </div>
+                    </div>
 
-                        <!------------------------------ Discover 2 -------------------------------->
-                        <div class="discover--card swiper-slide">
-                            <img src="img/ladakh.jpg" alt="Discover 2" class="discover--img" />
-                            <div class="discover--data">
-                                <h2 class="discover--title">Ladakh</h2>
-                                <span class="discover--description">15 tours available</span>
-                            </div>
+                    <!------------------------------ Discover 2 -------------------------------->
+                    <div class="discover--card swiper-slide">
+                        <img src="img/ladakh.jpg" alt="Discover 2" class="discover--img" />
+                        <div class="discover--data">
+                            <h2 class="discover--title">Ladakh</h2>
+                            <span class="discover--description">15 tours available</span>
                         </div>
+                    </div>
 
-                        <!------------------------------ Discover 3 -------------------------------->
-                        <div class="discover--card swiper-slide">
-                            <img src="img/vaishno-devi.jpg" alt="Discover 3" class="discover--img" />
-                            <div class="discover--data">
-                                <h2 class="discover--title">Vaishnodevi</h2>
-                                <span class="discover--description">19 tours available</span>
-                            </div>
+                    <!------------------------------ Discover 3 -------------------------------->
+                    <div class="discover--card swiper-slide">
+                        <img src="img/vaishno-devi.jpg" alt="Discover 3" class="discover--img" />
+                        <div class="discover--data">
+                            <h2 class="discover--title">Vaishnodevi</h2>
+                            <span class="discover--description">19 tours available</span>
                         </div>
+                    </div>
 
-                        <!------------------------------ Discover 4 -------------------------------->
-                        <div class="discover--card swiper-slide">
-                            <img src="img/manali.jpg" alt="Discover 4" class="discover--img" />
-                            <div class="discover--data">
-                                <h2 class="discover--title">Manali</h2>
-                                <span class="discover--description">48 tours available</span>
-                            </div>
+                    <!------------------------------ Discover 4 -------------------------------->
+                    <div class="discover--card swiper-slide">
+                        <img src="img/manali.jpg" alt="Discover 4" class="discover--img" />
+                        <div class="discover--data">
+                            <h2 class="discover--title">Manali</h2>
+                            <span class="discover--description">48 tours available</span>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!------------------------------ EXPERIENCE -------------------------------->
-            <section class="experience section">
-                <h2 class="section--title">
-                    With Our Experience <br />
-                    We Will Serve You
-                </h2>
+        <!------------------------------ EXPERIENCE -------------------------------->
+        <section class="experience section">
+            <h2 class="section--title">
+                With Our Experience <br /> We Will Serve You
+            </h2>
 
-                <div class="experience--container container grid">
-                    <div class="experience--content grid">
-                        <div class="experience--data">
-                            <h2 class="experience--number">15</h2>
-                            <span class="experience--description"
-                                >Year <br />
+            <div class="experience--container container grid">
+                <div class="experience--content grid">
+                    <div class="experience--data">
+                        <h2 class="experience--number">15</h2>
+                        <span class="experience--description">Year <br />
                                 Experience</span
                             >
                         </div>
@@ -249,271 +245,269 @@
                                 <div class="place--rating">
                                     <i class="ri-star-line place--rating-icon"></i>
                                     <span class="place--rating-number">5.0</span>
-                                </div>
+                    </div>
 
-                                <div class="place--data">
-                                    <div>
-                                        <h3 class="place--title">Vaishnodevi</h3>
-                                        <span class="place--subtitle">Jammu</span>
-                                    </div>
-                                    <span class="place--price">$1499</span>
-                                </div>
+                    <div class="place--data">
+                        <div>
+                            <h3 class="place--title">Vaishnodevi</h3>
+                            <span class="place--subtitle">Jammu</span>
+                        </div>
+                        <span class="place--price">$1499</span>
+                    </div>
 
-                                <button class="button button--flex place--button">
+                    <button class="button button--flex place--button">
                                     <i class="ri-arrow-right-line"></i>
                                 </button>
-                            </div>
-                        </div>
-
-                        <!------------------------------ Place Card 2 -------------------------------->
-                        <div class="place--card swiper-slide">
-                            <img src="img/srinagar.jpg" alt="Place 2" class="place--img" />
-
-                            <div class="place--content">
-                                <span class="place--rating">
-                                    <i class="ri-star-line place--rating-icon"></i>
-                                    <span class="place--rating-number">4.5</span>
-                                </span>
-
-                                <div class="place--data">
-                                    <div>
-                                        <h3 class="place--title">Srinagar</h3>
-                                        <span class="place--subtitle">Kashmir</span>
-                                    </div>
-                                    <span class="place--price">$1499</span>
-                                </div>
-
-                                <button class="button button--flex place--button">
-                                    <i class="ri-arrow-right-line"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!------------------------------ Place Card 3 -------------------------------->
-                        <div class="place--card swiper-slide">
-                            <img src="img/patnitop.jpg" alt="Place 3" class="place--img" />
-
-                            <div class="place--content">
-                                <span class="place--rating">
-                                    <i class="ri-star-line place--rating-icon"></i>
-                                    <span class="place--rating-number">4.7</span>
-                                </span>
-
-                                <div class="place--data">
-                                    <div>
-                                        <h3 class="place--title">Patnitop</h3>
-                                        <span class="place--subtitle">Jammu</span>
-                                    </div>
-                                    <span class="place--price">$2450</span>
-                                </div>
-
-                                <button class="button button--flex place--button">
-                                    <i class="ri-arrow-right-line"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!------------------------------ Place Card 4 -------------------------------->
-                        <div class="place--card swiper-slide">
-                            <img src="img/ladakh.jpg" alt="Place 4" class="place--img" />
-
-                            <div class="place--content">
-                                <span class="place--rating">
-                                    <i class="ri-star-line place--rating-icon"></i>
-                                    <span class="place--rating-number">4.7</span>
-                                </span>
-
-                                <div class="place--data">
-                                    <div>
-                                        <h3 class="place--title">Ladakh</h3>
-                                        <span class="place--subtitle">Kashmir</span>
-                                    </div>
-                                    <span class="place--price">$3000</span>
-                                </div>
-
-                                <button class="button button--flex place--button">
-                                    <i class="ri-arrow-right-line"></i>
-                                </button>
-                            </div>
-                        </div>
-
-                        <!------------------------------ Place Card 5 -------------------------------->
-                        <div class="place--card swiper-slide">
-                            <img src="img/doda.jpg" alt="Place 5" class="place--img" />
-
-                            <div class="place--content">
-                                <span class="place--rating">
-                                    <i class="ri-star-line place--rating-icon"></i>
-                                    <span class="place--rating-number">4.3</span>
-                                </span>
-
-                                <div class="place--data">
-                                    <div>
-                                        <h3 class="place--title">Doda</h3>
-                                        <span class="place--subtitle">Jammu</span>
-                                    </div>
-                                    <span class="place--price">$1450</span>
-                                </div>
-
-                                <button class="button button--flex place--button">
-                                    <i class="ri-arrow-right-line"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!------------------------------ SUBSCRIBE -------------------------------->
-            <section class="subscribe section">
-                <div class="subscribe--bg">
-                    <div class="subscribe--container container">
-                        <h2 class="section--title subscribe--title">
-                            Subscribe Our <br />
-                            Newsletter
-                        </h2>
-                        <p class="subscribe--description">Subscribe to our newsletter and get a special 30% discount.</p>
-
-                        <form action="" class="subscribe--form">
-                            <input type="text" placeholder="Enter email" class="subscribe--input" />
-
-                            <button class="button">Subscribe</button>
-                        </form>
-                    </div>
-                </div>
-            </section>
-
-            <!------------------------------ SPONSORS -------------------------------->
-            <section class="sponsor section">
-                <div class="sponsor--container container grid">
-                    <div class="sponsor--content">
-                        <img src="img/sponsors1.png" alt="Sponsor 1" class="sponsor--img" />
-                    </div>
-                    <div class="sponsor--content">
-                        <img src="img/sponsors2.png" alt="Sponsor 2" class="sponsor--img" />
-                    </div>
-                    <div class="sponsor--content">
-                        <img src="img/sponsors3.png" alt="Sponsor 4" class="sponsor--img" />
-                    </div>
-                    <div class="sponsor--content">
-                        <img src="img/sponsors4.png" alt="Sponsor 4" class="sponsor--img" />
-                    </div>
-                    <div class="sponsor--content">
-                        <img src="img/sponsors5.png" alt="Sponsor 5" class="sponsor--img" />
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <!------------------------------ FOOTER -------------------------------->
-        <footer class="footer section">
-            <div class="footer--container container grid">
-                <div class="footer--content grid">
-                    <div class="footer--data">
-                        <h3 class="footer--title">JKTravels</h3>
-                        <p class="footer--description">
-                            Travel you choose the <br />
-                            destination, we offer you the <br />
-                            experience.
-                        </p>
-
-                        <div class="footer--social-container">
-                            <a href="https://www.facebook.com/jktravels" target="_blank" class="footer--social">
-                                <i class="ri-facebook-box-fill"></i>
-                            </a>
-
-                            <a href="https://www.twitter.com/jktravels" target="_blank" class="footer--social">
-                                <i class="ri-twitter-fill"></i>
-                            </a>
-
-                            <a href="https://www.instagram.com/jktravels" target="_blank" class="footer--social">
-                                <i class="ri-instagram-fill"></i>
-                            </a>
-
-                            <a href="https://www.youtube.com/jktravels" target="_blank" class="footer--social">
-                                <i class="ri-youtube-fill"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="footer--data">
-                        <h3 class="footer--subtitle">About</h3>
-
-                        <ul>
-                            <li class="footer--item">
-                                <a href="#" class="footer--link">About Us</a>
-                            </li>
-
-                            <li class="footer--item">
-                                <a href="#" class="footer--link">Services</a>
-                            </li>
-
-                            <li class="footer--item">
-                                <a href="#" class="footer--link">News &amp; Blog</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="footer--data">
-                        <h3 class="footer--subtitle">Company</h3>
-
-                        <ul>
-                            <li class="footer--item">
-                                <a href="#" class="footer--link">Team</a>
-                            </li>
-
-                            <li class="footer--item">
-                                <a href="#" class="footer--link">Plan &amp; Pricing</a>
-                            </li>
-
-                            <li class="footer--item">
-                                <a href="#" class="footer--link">Become a member</a>
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="footer--data">
-                        <h3 class="footer--subtitle">Support</h3>
-
-                        <ul>
-                            <li class="footer--item">
-                                <a href="#" class="footer--link">FAQs</a>
-                            </li>
-
-                            <li class="footer--item">
-                                <a href="#" class="footer--link">Support Center</a>
-                            </li>
-
-                            <li class="footer--item">
-                                <a href="#" class="footer--link">Contact Us</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="footer--rights">
-                    <p class="footer--copy">&copy; 2022 JKTravels PVT LTD. All rigths reserved.</p>
-
-                    <div class="footer--terms">
-                        <a href="#" class="footer--terms-link">Terms &amp; Agreements</a>
-                        <a href="" class="footer--terms-link">Privacy Policy</a>
-                    </div>
                 </div>
             </div>
-        </footer>
 
-        <!------------------------------ SCROLL UP -------------------------------->
-        <a href="#" class="scrollup" id="scrollup">
-            <i class="ri-arrow-up-line scrollup--icon"></i>
-        </a>
+            <!------------------------------ Place Card 2 -------------------------------->
+            <div class="place--card swiper-slide">
+                <img src="img/srinagar.jpg" alt="Place 2" class="place--img" />
 
-        <!------------------------------ SWIPER JS -------------------------------->
-        <script src="js/scrollreveal.min.js"></script>
+                <div class="place--content">
+                    <span class="place--rating">
+                                    <i class="ri-star-line place--rating-icon"></i>
+                                    <span class="place--rating-number">4.5</span>
+                    </span>
 
-        <!------------------------------ SWIPER JS -------------------------------->
-        <script src="js/swiper-bundle.min.js"></script>
+                    <div class="place--data">
+                        <div>
+                            <h3 class="place--title">Srinagar</h3>
+                            <span class="place--subtitle">Kashmir</span>
+                        </div>
+                        <span class="place--price">$1499</span>
+                    </div>
 
-        <!------------------------------ MAIN JS -------------------------------->
-        <script src="js/main.js"></script>
-    </body>
+                    <button class="button button--flex place--button">
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                </div>
+            </div>
+
+            <!------------------------------ Place Card 3 -------------------------------->
+            <div class="place--card swiper-slide">
+                <img src="img/patnitop.jpg" alt="Place 3" class="place--img" />
+
+                <div class="place--content">
+                    <span class="place--rating">
+                                    <i class="ri-star-line place--rating-icon"></i>
+                                    <span class="place--rating-number">4.7</span>
+                    </span>
+
+                    <div class="place--data">
+                        <div>
+                            <h3 class="place--title">Patnitop</h3>
+                            <span class="place--subtitle">Jammu</span>
+                        </div>
+                        <span class="place--price">$2450</span>
+                    </div>
+
+                    <button class="button button--flex place--button">
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                </div>
+            </div>
+
+            <!------------------------------ Place Card 4 -------------------------------->
+            <div class="place--card swiper-slide">
+                <img src="img/ladakh.jpg" alt="Place 4" class="place--img" />
+
+                <div class="place--content">
+                    <span class="place--rating">
+                                    <i class="ri-star-line place--rating-icon"></i>
+                                    <span class="place--rating-number">4.7</span>
+                    </span>
+
+                    <div class="place--data">
+                        <div>
+                            <h3 class="place--title">Ladakh</h3>
+                            <span class="place--subtitle">Kashmir</span>
+                        </div>
+                        <span class="place--price">$3000</span>
+                    </div>
+
+                    <button class="button button--flex place--button">
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                </div>
+            </div>
+
+            <!------------------------------ Place Card 5 -------------------------------->
+            <div class="place--card swiper-slide">
+                <img src="img/doda.jpg" alt="Place 5" class="place--img" />
+
+                <div class="place--content">
+                    <span class="place--rating">
+                                    <i class="ri-star-line place--rating-icon"></i>
+                                    <span class="place--rating-number">4.3</span>
+                    </span>
+
+                    <div class="place--data">
+                        <div>
+                            <h3 class="place--title">Doda</h3>
+                            <span class="place--subtitle">Jammu</span>
+                        </div>
+                        <span class="place--price">$1450</span>
+                    </div>
+
+                    <button class="button button--flex place--button">
+                                    <i class="ri-arrow-right-line"></i>
+                                </button>
+                </div>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <!------------------------------ SUBSCRIBE -------------------------------->
+        <section class="subscribe section">
+            <div class="subscribe--bg">
+                <div class="subscribe--container container">
+                    <h2 class="section--title subscribe--title">
+                        Subscribe Our <br /> Newsletter
+                    </h2>
+                    <p class="subscribe--description">Subscribe to our newsletter and get a special 30% discount.</p>
+
+                    <form action="" class="subscribe--form">
+                        <input type="text" placeholder="Enter email" class="subscribe--input" />
+
+                        <button class="button">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!------------------------------ SPONSORS -------------------------------->
+        <section class="sponsor section">
+            <div class="sponsor--container container grid">
+                <div class="sponsor--content">
+                    <img src="img/sponsors1.png" alt="Sponsor 1" class="sponsor--img" />
+                </div>
+                <div class="sponsor--content">
+                    <img src="img/sponsors2.png" alt="Sponsor 2" class="sponsor--img" />
+                </div>
+                <div class="sponsor--content">
+                    <img src="img/sponsors3.png" alt="Sponsor 4" class="sponsor--img" />
+                </div>
+                <div class="sponsor--content">
+                    <img src="img/sponsors4.png" alt="Sponsor 4" class="sponsor--img" />
+                </div>
+                <div class="sponsor--content">
+                    <img src="img/sponsors5.png" alt="Sponsor 5" class="sponsor--img" />
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!------------------------------ FOOTER -------------------------------->
+    <footer class="footer section">
+        <div class="footer--container container grid">
+            <div class="footer--content grid">
+                <div class="footer--data">
+                    <h3 class="footer--title">JKTravels</h3>
+                    <p class="footer--description">
+                        Travel you choose the <br /> destination, we offer you the <br /> experience.
+                    </p>
+
+                    <div class="footer--social-container">
+                        <a href="https://www.facebook.com/jktravels" target="_blank" class="footer--social">
+                            <i class="ri-facebook-box-fill"></i>
+                        </a>
+
+                        <a href="https://www.twitter.com/jktravels" target="_blank" class="footer--social">
+                            <i class="ri-twitter-fill"></i>
+                        </a>
+
+                        <a href="https://www.instagram.com/jktravels" target="_blank" class="footer--social">
+                            <i class="ri-instagram-fill"></i>
+                        </a>
+
+                        <a href="https://www.youtube.com/jktravels" target="_blank" class="footer--social">
+                            <i class="ri-youtube-fill"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer--data">
+                    <h3 class="footer--subtitle">About</h3>
+
+                    <ul>
+                        <li class="footer--item">
+                            <a href="#" class="footer--link">About Us</a>
+                        </li>
+
+                        <li class="footer--item">
+                            <a href="#" class="footer--link">Services</a>
+                        </li>
+
+                        <li class="footer--item">
+                            <a href="#" class="footer--link">News &amp; Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer--data">
+                    <h3 class="footer--subtitle">Company</h3>
+
+                    <ul>
+                        <li class="footer--item">
+                            <a href="#" class="footer--link">Team</a>
+                        </li>
+
+                        <li class="footer--item">
+                            <a href="#" class="footer--link">Plan &amp; Pricing</a>
+                        </li>
+
+                        <li class="footer--item">
+                            <a href="#" class="footer--link">Become a member</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer--data">
+                    <h3 class="footer--subtitle">Support</h3>
+
+                    <ul>
+                        <li class="footer--item">
+                            <a href="#" class="footer--link">FAQs</a>
+                        </li>
+
+                        <li class="footer--item">
+                            <a href="#" class="footer--link">Support Center</a>
+                        </li>
+
+                        <li class="footer--item">
+                            <a href="#" class="footer--link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer--rights">
+                <p class="footer--copy">&copy; 2022 JKTravels PVT LTD. All rigths reserved.</p>
+
+                <div class="footer--terms">
+                    <a href="#" class="footer--terms-link">Terms &amp; Agreements</a>
+                    <a href="" class="footer--terms-link">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!------------------------------ SCROLL UP -------------------------------->
+    <a href="#" class="scrollup" id="scrollup">
+        <i class="ri-arrow-up-line scrollup--icon"></i>
+    </a>
+
+    <!------------------------------ SWIPER JS -------------------------------->
+    <script src="js/scrollreveal.min.js"></script>
+
+    <!------------------------------ SWIPER JS -------------------------------->
+    <script src="js/swiper-bundle.min.js"></script>
+
+    <!------------------------------ MAIN JS -------------------------------->
+    <script src="js/main.js"></script>
+</body>
+
 </html>
