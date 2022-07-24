@@ -267,16 +267,22 @@ button {
 }
 
 .btn{
-    background-color: white;
+    /*&background-color: black;
     color: white;
-    text-decoration: ;
     border: 1.5px solid #2eb2ff;
     font-weight: bold;
     padding: 2px 7px;
-    border-radius: 13px;
+    border-radius: 5px;
     margin-left: 50px;
-    transition: transform .4s; 
+    transition: transform .4s;*/
+
+    background-color: skyblue;
+        border: .5px solid black;
+        border-radius: 10px;
+        color: #fff;
+        padding: 8px;
 }
+
 
 .btn:hover{
     transform: scale(1.2);
