@@ -277,7 +277,7 @@ button {
     transition: transform .4s;*/
 
     background-color: transparent;
-        border: .5px solid white;
+        border: .5px solid #2eb2ff;
         border-radius: 15px;
         padding: 8px;
 }
