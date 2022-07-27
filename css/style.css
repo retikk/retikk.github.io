@@ -276,7 +276,7 @@ button {
     margin-left: 50px;
     transition: transform .4s;*/
 
-    background-color: #2eb2ff;
+    background-color: transparent;
         border: .5px solid white;
         border-radius: 15px;
         padding: 8px;
@@ -285,6 +285,7 @@ button {
 
 .btn:hover{
     transform: scale(1.1);
+    background-color: #2eb2ff;
 }
 
 
