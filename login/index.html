@@ -117,7 +117,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
         import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -140,6 +140,9 @@
       const analytics = getAnalytics(app);
       const database = getDatabase(app);
       const auth = getAuth();
+      auth.languageCode = 'it';
+      const provider = new GoogleAuthProvider();
+      const user = auth.currentUser;
 
 
       //signUp Event Listener
@@ -171,6 +174,26 @@
         });
 
     });
+
+
+signInWithPopup(auth, provider)
+  .then((result) => {
+    // This gives you a Google Access Token. You can use it to access the Google API.
+    const credential = GoogleAuthProvider.credentialFromResult(result);
+    const token = credential.accessToken;
+    // The signed-in user info.
+    const user = result.user;
+    // ...
+  }).catch((error) => {
+    // Handle Errors here.
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    // The email of the user's account used.
+    const email = error.customData.email;
+    // The AuthCredential type that was used.
+    const credential = GoogleAuthProvider.credentialFromError(error);
+    // ...
+  });
 
     //Email Verification
     sendEmailVerification(auth.currentUser)
@@ -208,7 +231,7 @@
 
 
     //Observer
-    const user = auth.currentUser;
+
     onAuthStateChanged(auth, (user) => {
       if (user) {
         // User is signed in, see docs for a list of available properties
@@ -246,7 +269,7 @@
     reset.addEventListener('click',(e)=>{
       sendPasswordResetEmail(auth, email)
         .then(() => {
-          alert("You will get an email if an account will be linked with this email!"
+          alert("You will get an email if an account will be linked with this email!");
           // Password reset email sent!
           // ..
         })
