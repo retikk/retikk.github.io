@@ -30,17 +30,20 @@
             <input type="submit" id="login" value="Login" class="btn solid" />
             <p class="social-text">Or Sign in with social platforms</p>
             <div class="social-media">
-              <a href="#" class="social-icon">
+              <a id="facebookSignin" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a id="twitterSignin" class="social-icon">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a id="googleSignin" class="social-icon">
                 <i class="fab fa-google"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a id="linkedin" class="social-icon">
                 <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a id="github" class="social-icon">
+                <i class="fab fa-github"></i>
               </a>
             </div>
           </form>
@@ -64,17 +67,20 @@
             <input type="submit" id="signUp" class="btn" value="Sign up" />
             <p class="social-text">Or Sign up with social platforms</p>
             <div class="social-media">
-              <a href="#" class="social-icon">
+              <a id="facebookSignup" class="social-icon">
                 <i class="fab fa-facebook-f"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a id="twitterSignup" class="social-icon">
                 <i class="fab fa-twitter"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a id="googleSignup" class="social-icon">
                 <i class="fab fa-google"></i>
               </a>
-              <a href="#" class="social-icon">
+              <a id="linkedinSignup" class="social-icon">
                 <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a id="githubSignup" class="social-icon">
+                <i class="fab fa-github"></i>
               </a>
             </div>
           </form>
@@ -117,7 +123,7 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-app.js";
         import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-analytics.js";
         import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-database.js";
-        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, GithubAuthProvider, sendEmailVerification, sendPasswordResetEmail, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/9.9.0/firebase-auth.js";
         // TODO: Add SDKs for Firebase products that you want to use
         // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -142,12 +148,40 @@
       const auth = getAuth();
       auth.languageCode = 'it';
       const provider = new GoogleAuthProvider();
+      const fbprovider = new FacebookAuthProvider();
+      const twprovider = new TwitterAuthProvider();
+      const ghprovider = new GithubAuthProvider();
       const user = auth.currentUser;
 
 
-      //signUp Event Listener
-    signUp.addEventListener('click',(e) => {
+      //signUp Event Listener//
+      document.getElementById('signUp').addEventListener('click', (e) => {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        createUserWithEmailAndPassword(email, password).then(function(user) {
+          user.sendEmailVerification();
+          console.log('email sent');
+        }).catch(function(error) {
+          console.log(error.message);
+        });
+      });
 
+      //signIn Event Listener//
+      document.getElementById('sign-in-btn').addEventListener('click', (e) => {
+        e.preventDefault();
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        signInWithEmailAndPassword(email, password).then(function(user) {
+          console.log('signed in');
+        }).catch(function(error) {
+          console.log(error.message);
+        });
+      });
+
+
+    signUp.addEventListener('click',(e) => {
       var email = document.getElementById('email').value;
       var password = document.getElementById('password').value;
       var username = document.getElementById('username').value;
@@ -155,6 +189,10 @@
       createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
          // Signed in 
+          console.log(userCredential);
+          var user = userCredential.user;
+          var userId = user.uid;
+          var userEmail = user.email;
           const user = userCredential.user;
 
           set(ref(database, 'users/' + user.uid),{
@@ -175,35 +213,255 @@
 
     });
 
-
-signInWithPopup(auth, provider)
-  .then((result) => {
-    // This gives you a Google Access Token. You can use it to access the Google API.
-    const credential = GoogleAuthProvider.credentialFromResult(result);
-    const token = credential.accessToken;
-    // The signed-in user info.
-    const user = result.user;
-    // ...
-  }).catch((error) => {
-    // Handle Errors here.
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    // The email of the user's account used.
-    const email = error.customData.email;
-    // The AuthCredential type that was used.
-    const credential = GoogleAuthProvider.credentialFromError(error);
-    // ...
-  });
-
-    //Email Verification
-    sendEmailVerification(auth.currentUser)
-      .then(() => {
-        // Email verification sent!
+    //google signup event listener
+    googleSignup.addEventListener('click',(e) => {
+      signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
         // ...
       });
+    });
+
+
+      //facebook signup event listener
+    facebookSignup.addEventListener('click',(e) => {
+      signInWithPopup(auth, fbprovider)
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const accessToken = credential.accessToken;
+
+        // ...
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error);
+
+        // ...
+      });
+    });
+
+
+     //Twitter signup event listener
+    twitterSignup.addEventListener('click',(e) => {
+      signInWithPopup(auth, twprovider)
+      .then((result) => {
+        // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+        // You can use these server side with your app's credentials to access the Twitter API.
+        const credential = TwitterAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const secret = credential.secret;
+
+        // The signed-in user info.
+        const user = result.user;
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = TwitterAuthProvider.credentialFromError(error);
+        // ...
+      });
+    });
+
+
+    //Github signup event listener
+    githubSignup.addEventListener('click',(e) => {
+      signInWithPopup(auth, ghprovider)
+      .then((result) => {
+        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        // The signed-in user info.
+        const user = result.user;
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GithubAuthProvider.credentialFromError(error);
+        // ...
+      });
+    });
+
+
+
+    //signin with google event listener//
+    googleSignin.addEventListener('click',(e) => {
+      signInWithPopup(auth, provider)
+      .then((result) => {
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        // The signed-in user info.
+        const user = result.user;
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      });
+    }
+    );
+
+    //signin with facebook event listener//
+    facebookSignin.addEventListener('click',(e) => {
+      signInWithPopup(auth, fbprovider)
+      .then((result) => {
+        // The signed-in user info.
+        const user = result.user;
+
+        // This gives you a Facebook Access Token. You can use it to access the Facebook API.
+        const credential = FacebookAuthProvider.credentialFromResult(result);
+        const accessToken = credential.accessToken;
+
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = FacebookAuthProvider.credentialFromError(error);
+        // ...
+      });
+    }
+    );
+
+    //signin with twitter event listener//
+    twitterSignin.addEventListener('click',(e) => {
+      signInWithPopup(auth, twprovider)
+      .then((result) => {
+        // This gives you a the Twitter OAuth 1.0 Access Token and Secret.
+        // You can use these server side with your app's credentials to access the Twitter API.
+        const credential = TwitterAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const secret = credential.secret;
+
+        // The signed-in user info.
+        const user = result.user;
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = TwitterAuthProvider.credentialFromError(error);
+        // ...
+      });
+    }
+    );
+
+    //signin with github event listener//
+    githubSignin.addEventListener('click',(e) => {
+      signInWithPopup(auth, ghprovider)
+      .then((result) => {
+        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+        const credential = GithubAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+
+        // The signed-in user info.
+        const user = result.user;
+        // ...
+      }).catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // The AuthCredential type that was used.
+        const credential = GithubAuthProvider.credentialFromError(error);
+        // ...
+      });
+    }
+    );
+
+    //send email verification event listener//
+    sendEmailVerification.addEventListener('click',(e) => {
+      user.sendEmailVerification().then(() => {
+        // Email Verification sent!
+        // ...
+      }).catch((error) => {
+        // Error occurred. Commonly check the console for more details.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // ...
+      });
+    }
+    );
+
+    //send password reset email event listener//
+    sendPasswordReset.addEventListener('click',(e) => {
+      user.sendPasswordResetEmail().then(() => {
+        // Password Reset Email sent!
+        // ...
+      }).catch((error) => {
+        // Error occurred. Commonly check the console for more details.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // The email of the user's account used.
+        const email = error.customData.email;
+        // ...
+      });
+    }
+    );
+
+
+
+    //signout event listener//
+    signout.addEventListener('click',(e) => {
+      auth.signOut().then(() => {
+        // Sign-out successful.
+        // ...
+      }).catch((error) => {
+        // An error happened.
+        // ...
+      });
+    }
+    );
+
+
 
       //Login Event Listner
-     login.addEventListener('click',(e)=>{
+    login.addEventListener('click',(e)=>{
        var email = document.getElementById('emaill').value;
        var password = document.getElementById('passwordd').value;
 
@@ -250,20 +508,17 @@ signInWithPopup(auth, provider)
 
 
       //Logout event listner
-    logout.addEventListener('click',(e)=>{
+      logout.addEventListener('click',(e) => {
+        auth.signOut().then(() => {
+          // Sign-out successful.
+          // ...
+        }).catch((error) => {
+          // An error happened.
+          // ...
+        });
+      }
+      );
 
-       signOut(auth).then(() => {
-         // Sign-out successful.
-         alert('user loged out');
-       }).catch((error) => {
-         // An error happened.
-         const errorCode = error.code;
-         const errorMessage = error.message;
-
-            alert(errorMessage);
-       });
-
-    });
 
     //Forget Password
     reset.addEventListener('click',(e)=>{
